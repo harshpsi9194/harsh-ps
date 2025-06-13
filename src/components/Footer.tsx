@@ -25,12 +25,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#1a1a1a] border-t border-gray-800 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <footer className="bg-[#1a1a1a] border-t border-gray-800 py-10 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Sitemap */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Sitemap</h3>
+            <h3 className="text-lg font-semibold mb-3 text-white">Sitemap</h3>
             <div className="grid grid-cols-2 gap-2">
               {sitemapLinks.map((link) => (
                 <button
@@ -46,7 +46,7 @@ const Footer = () => {
           
           {/* Socials */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Socials</h3>
+            <h3 className="text-lg font-semibold mb-3 text-white">Socials</h3>
             <div className="flex flex-col gap-2">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -56,9 +56,9 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                   >
-                    <IconComponent size={16} />
+                    <IconComponent size={14} />
                     {social.name}
                   </a>
                 );
@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-gray-800 text-center">
+        <div className="pt-6 border-t border-gray-800 text-center">
           <p className="text-gray-400 text-sm">
             © 2024 Henry. All rights reserved. Built with React & Tailwind CSS.
           </p>
