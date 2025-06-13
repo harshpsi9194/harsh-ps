@@ -3,49 +3,67 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="bg-[#2a2a2a] rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 rounded-2xl"></div>
-          
-          <div className="relative z-10">
-            <h1 className="text-2xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Welcome! I'm Henry
-            </h1>
-            
-            <p className="text-base md:text-lg text-gray-300 mb-2 leading-relaxed">
-              A professional web developer with a knack for crafting
-            </p>
-            <p className="text-base md:text-lg text-gray-300 mb-8 leading-relaxed">
-              visually stunning and highly functional websites.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-8">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">
-                  45<span className="text-blue-300">+</span>
-                </div>
-                <div className="text-gray-400 text-sm">Projects done</div>
-              </div>
-              
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-purple-400 mb-1">
-                  10<span className="text-purple-300">+</span>
-                </div>
-                <div className="text-gray-400 text-sm">Years of experience</div>
-              </div>
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-24">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          {/* Left side - Text content */}
+          <div className="lg:w-1/2 text-left">
+            <div className="mb-6">
+              <p className="text-gray-400 text-sm mb-2">Building Scalable</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                <span className="text-white">Modern Websites</span><br />
+                <span className="text-white">for the Future</span>
+              </h1>
             </div>
             
-            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-5 py-2 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
-              View My Work
-              <ArrowRight size={16} />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <button className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
+                Download CV
+                <ArrowRight size={16} />
+              </button>
+              <button className="text-gray-300 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300">
+                Scroll down
+              </button>
+            </div>
           </div>
           
-          {/* Brand icon bottom right */}
-          <div className="absolute bottom-4 right-4 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-sm opacity-20">
-            H
+          {/* Right side - Profile image placeholder */}
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-3xl flex items-center justify-center relative overflow-hidden">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-4 mx-auto">
+                  H
+                </div>
+                <h2 className="text-lg font-semibold text-white mb-2">Welcome! I'm Henry</h2>
+                <p className="text-sm text-gray-300">Professional Web Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Stats section moved to bottom */}
+        <div className="mt-16 text-left">
+          <p className="text-gray-300 text-sm mb-6 max-w-2xl">
+            Welcome! I'm Henry, a professional web developer with a knack for crafting
+            visually stunning and highly functional websites. Combining creativity and
+            technical expertise, I transform your vision into digital masterpiece that excels
+            in both appearance and performance.
+          </p>
+          
+          <div className="flex gap-12">
+            <div>
+              <div className="text-2xl font-bold text-blue-400 mb-1">
+                45<span className="text-blue-300">+</span>
+              </div>
+              <div className="text-gray-400 text-sm">Project done</div>
+            </div>
+            
+            <div>
+              <div className="text-2xl font-bold text-purple-400 mb-1">
+                10<span className="text-purple-300">+</span>
+              </div>
+              <div className="text-gray-400 text-sm">Years of experience</div>
+            </div>
           </div>
         </div>
       </div>

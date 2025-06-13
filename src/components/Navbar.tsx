@@ -18,9 +18,8 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Blogs", href: "#blogs" },
-    { name: "Resources", href: "#resources" },
+    { name: "Work", href: "#projects" },
+    { name: "Reviews", href: "#blogs" },
   ];
 
   const handleScroll = (href: string) => {
@@ -37,86 +36,83 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-      <div
-        className={`transition-all duration-300 rounded-xl px-4 py-2 ${
-          scrolled
-            ? "bg-[#3a3a3a]/90 backdrop-blur-md shadow-lg"
-            : "bg-[#3a3a3a]/80 backdrop-blur-sm"
-        }`}
-      >
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">
-              H
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div className="bg-[#2d2d2d]/95 backdrop-blur-md border-b border-gray-700/30">
+        <div className="max-w-6xl mx-auto px-6 py-3">
+          <div className="flex justify-between items-center">
+            {/* Logo - Left side */}
+            <div className="flex-shrink-0">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                H
+              </div>
             </div>
-          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
+            {/* Desktop Navigation - Center */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleScroll(item.href)}
+                  className="text-gray-300 hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-white/10"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+
+            {/* Right side - Theme Toggle + Contact */}
+            <div className="hidden md:flex items-center space-x-3">
               <button
-                key={item.name}
-                onClick={() => handleScroll(item.href)}
-                className="text-gray-300 hover:text-white px-2 py-1 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-white/10"
+                onClick={toggleTheme}
+                className="p-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-white/10 rounded-lg"
               >
-                {item.name}
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
               </button>
-            ))}
-            
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-1.5 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-white/10 rounded-lg"
-            >
-              {isDark ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
-            
-            {/* Contact Me Button */}
-            <button
-              onClick={() => handleScroll("#contact")}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300"
-            >
-              Contact Me
-            </button>
-          </div>
+              
+              <button
+                onClick={() => handleScroll("#contact")}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+              >
+                Contact Me
+              </button>
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="bg-gray-800 inline-flex items-center justify-center p-1.5 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
-            >
-              {isOpen ? <X size={16} /> : <Menu size={16} />}
-            </button>
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              >
+                {isOpen ? <X size={18} /> : <Menu size={18} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden mt-2">
-          <div className="px-3 py-2 space-y-1 bg-[#3a3a3a]/95 backdrop-blur-md rounded-xl">
+        <div className="md:hidden">
+          <div className="px-4 py-3 space-y-2 bg-[#2d2d2d]/95 backdrop-blur-md border-b border-gray-700/30">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleScroll(item.href)}
-                className="text-gray-300 hover:text-white block px-2 py-1.5 rounded-lg text-sm font-medium w-full text-left transition-colors duration-200 hover:bg-white/10"
+                className="text-gray-300 hover:text-white block px-3 py-2 rounded-lg text-sm font-medium w-full text-left transition-colors duration-200 hover:bg-white/10"
               >
                 {item.name}
               </button>
             ))}
-            <div className="flex items-center justify-between pt-2 border-t border-gray-600">
+            <div className="flex items-center justify-between pt-3 border-t border-gray-600">
               <button
                 onClick={toggleTheme}
-                className="p-1.5 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-white/10 rounded-lg"
+                className="p-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-white/10 rounded-lg"
               >
-                {isDark ? <Sun size={16} /> : <Moon size={16} />}
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
               </button>
               <button
                 onClick={() => handleScroll("#contact")}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
               >
                 Contact Me
               </button>
