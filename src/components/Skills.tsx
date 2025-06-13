@@ -67,8 +67,12 @@ const Skills = () => {
                   className="w-6 h-6"
                   onError={(e) => {
                     // Fallback to text if image fails to load
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'block';
+                    const target = e.currentTarget as HTMLElement;
+                    target.style.display = 'none';
+                    const nextSibling = target.nextElementSibling as HTMLElement;
+                    if (nextSibling) {
+                      nextSibling.style.display = 'block';
+                    }
                   }}
                 />
                 <div className="text-lg hidden">{skill.label.charAt(0)}</div>
