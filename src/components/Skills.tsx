@@ -44,10 +44,10 @@ const Skills = () => {
   ];
 
   return (
-    <section id="about" className="py-8 px-4">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-lg md:text-xl font-bold mb-2">Essential Tools I Use</h2>
+    <section id="about" className="py-6 px-4">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-4">
+          <h2 className="text-base md:text-lg font-bold mb-1">Essential Tools I Use</h2>
           <p className="text-gray-400 text-xs max-w-md mx-auto">
             Discover the powerful tools and technologies I use to create
             exceptional, high-performing websites & applications.
@@ -64,9 +64,8 @@ const Skills = () => {
                 <img 
                   src={skill.imgSrc} 
                   alt={skill.label}
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   onError={(e) => {
-                    // Fallback to text if image fails to load
                     const target = e.currentTarget;
                     target.style.display = 'none';
                     const nextSibling = target.nextElementSibling as HTMLElement | null;
@@ -75,7 +74,7 @@ const Skills = () => {
                     }
                   }}
                 />
-                <div className="text-sm hidden">{skill.label.charAt(0)}</div>
+                <div className="text-xs hidden">{skill.label.charAt(0)}</div>
               </div>
               <h3 className="text-xs font-semibold mb-1 text-center">{skill.label}</h3>
               <p className="text-gray-400 text-xs text-center">{skill.desc}</p>
