@@ -35,51 +35,51 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <section id="contact" className="py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left side - Contact info */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            <h2 className="text-xl md:text-2xl font-bold mb-3">
               Contact me for collaboration
             </h2>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-400 mb-4 leading-relaxed text-sm">
               Reach out today to discuss your project needs and start collaborating on
               something amazing!
             </p>
             
-            <div className="flex gap-3 mb-6">
+            <div className="flex gap-2 mb-4">
               <a
                 href="https://github.com"
-                className="p-2.5 bg-[#2a2a2a] rounded-xl hover:bg-[#3a2a3a] transition-colors duration-300"
+                className="p-2 bg-[#2a2a2a] rounded-xl hover:bg-[#3a2a3a] transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={20} />
+                <Github size={18} />
               </a>
               <a
                 href="https://linkedin.com"
-                className="p-2.5 bg-[#2a2a2a] rounded-xl hover:bg-[#3a2a3a] transition-colors duration-300"
+                className="p-2 bg-[#2a2a2a] rounded-xl hover:bg-[#3a2a3a] transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={20} />
+                <Linkedin size={18} />
               </a>
               <a
                 href="https://instagram.com"
-                className="p-2.5 bg-[#2a2a2a] rounded-xl hover:bg-[#3a2a3a] transition-colors duration-300"
+                className="p-2 bg-[#2a2a2a] rounded-xl hover:bg-[#3a2a3a] transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Instagram size={20} />
+                <Instagram size={18} />
               </a>
             </div>
           </div>
           
           {/* Right side - Contact form */}
-          <div className="bg-[#2a2a2a] p-6 rounded-xl shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-[#2a2a2a] p-5 rounded-xl shadow-lg">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">
                     Name
@@ -91,7 +91,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2 bg-[#1f1f1f] border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-3 py-2 bg-[#1f1f1f] border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
                     placeholder="Your name"
                   />
                 </div>
@@ -106,7 +106,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2 bg-[#1f1f1f] border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-3 py-2 bg-[#1f1f1f] border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -122,8 +122,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={4}
-                  className="w-full px-3 py-2 bg-[#1f1f1f] border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                  rows={3}
+                  className="w-full px-3 py-2 bg-[#1f1f1f] border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-sm"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -131,7 +131,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-sm"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
@@ -140,14 +140,14 @@ const Contact = () => {
         </div>
         
         {/* CTA Banner */}
-        <div className="mt-16 bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-6 md:p-8 text-center">
-          <h3 className="text-xl md:text-2xl font-bold mb-3">
+        <div className="mt-12 bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 rounded-xl p-5 md:p-6 text-center">
+          <h3 className="text-lg md:text-xl font-bold mb-2">
             Let's work together today!
           </h3>
-          <p className="text-gray-400 mb-6 max-w-xl mx-auto">
+          <p className="text-gray-400 mb-4 max-w-lg mx-auto text-sm">
             Ready to bring your ideas to life? Let's collaborate and create something extraordinary together.
           </p>
-          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2.5 rounded-xl font-medium transition-all duration-300 transform hover:scale-105">
+          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-5 py-2 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 text-sm">
             Start Project
           </button>
         </div>
