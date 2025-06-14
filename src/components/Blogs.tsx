@@ -30,17 +30,17 @@ const Blogs = () => {
   ];
 
   return (
-    <section id="blogs" className="py-8 px-4">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-base md:text-lg font-bold mb-1">Latest Blog Posts</h2>
-          <p className="text-gray-400 text-xs max-w-xl mx-auto">
+    <section id="blogs" className="py-10 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-lg md:text-xl font-bold mb-2">Latest Blog Posts</h2>
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
             Insights, tutorials, and thoughts on web development, design trends,
             and the latest technologies in the industry.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
           {blogPosts.map((post) => (
             <article
               key={post.id}
@@ -50,34 +50,34 @@ const Blogs = () => {
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
-              <div className="p-3">
-                <div className="flex items-center gap-2 text-gray-400 text-xs mb-1">
+              <div className="p-4">
+                <div className="flex items-center gap-3 text-gray-400 text-xs mb-2">
                   <div className="flex items-center gap-1">
-                    <Calendar size={10} />
+                    <Calendar size={12} />
                     <span>{post.date}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Clock size={10} />
+                    <Clock size={12} />
                     <span>{post.readTime}</span>
                   </div>
                 </div>
                 
-                <h3 className="text-sm font-semibold mb-1 line-clamp-2 group-hover:text-blue-300 transition-colors">
+                <h3 className="text-sm font-semibold mb-2 line-clamp-2 group-hover:text-blue-300 transition-colors">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-400 mb-2 text-xs leading-relaxed line-clamp-3">
+                <p className="text-gray-400 mb-3 text-sm leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
                 
-                <button className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 font-medium text-xs transition-colors">
+                <button className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 font-medium text-sm transition-colors">
                   Read More
-                  <ArrowRight size={10} />
+                  <ArrowRight size={12} />
                 </button>
               </div>
             </article>
@@ -85,9 +85,9 @@ const Blogs = () => {
         </div>
         
         <div className="text-center">
-          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-1.5 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-xs">
+          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-sm">
             View All Posts
-            <ArrowRight size={12} />
+            <ArrowRight size={14} />
           </button>
         </div>
       </div>

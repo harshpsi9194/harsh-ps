@@ -28,30 +28,30 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-8 px-4">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-base md:text-lg font-bold mb-1">Featured Projects</h2>
-          <p className="text-gray-400 text-xs max-w-lg mx-auto">
+    <section id="projects" className="py-10 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-lg md:text-xl font-bold mb-2">Featured Projects</h2>
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
             A showcase of my recent work and technical expertise
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, index) => (
             <div key={index} className="bg-[#2a2a2a] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-28 object-cover"
+                className="w-full h-36 object-cover"
               />
-              <div className="p-3">
-                <h3 className="text-sm font-semibold mb-1">{project.title}</h3>
-                <p className="text-gray-400 text-xs mb-2">{project.description}</p>
+              <div className="p-4">
+                <h3 className="text-base font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-3">{project.description}</p>
                 
-                <div className="flex flex-wrap gap-1 mb-2">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded text-xs">
+                    <span key={techIndex} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs">
                       {tech}
                     </span>
                   ))}
@@ -60,13 +60,13 @@ const Projects = () => {
                 <div className="flex gap-2">
                   <a 
                     href={project.github}
-                    className="flex-1 bg-gray-600 hover:bg-gray-500 text-white text-center py-1 rounded text-xs transition-colors duration-300"
+                    className="flex-1 bg-gray-600 hover:bg-gray-500 text-white text-center py-2 rounded text-sm transition-colors duration-300"
                   >
                     GitHub
                   </a>
                   <a 
                     href={project.demo}
-                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-center py-1 rounded text-xs transition-all duration-300"
+                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white text-center py-2 rounded text-sm transition-all duration-300"
                   >
                     Live Demo
                   </a>
@@ -76,8 +76,8 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-4">
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-1.5 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-xs">
+        <div className="text-center mt-6">
+          <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-sm">
             View All Projects
           </button>
         </div>
