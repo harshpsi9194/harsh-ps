@@ -1,83 +1,117 @@
+import { 
+  FaReact, 
+  FaPython, 
+  FaJava, 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaNodeJs, 
+  FaGitAlt,
+  FaDocker 
+} from 'react-icons/fa';
+import { 
+  SiJavascript, 
+  SiTypescript, 
+  SiMongodb, 
+  SiTailwindcss, 
+  SiPostgresql,
+  SiPytorch,
+  SiKubernetes,
+  SiRust,
+  SiGo,
+  SiVim
+} from 'react-icons/si';
 
 const Skills = () => {
-  const skillItems = [
-    {
-      imgSrc: '/images/javascript.svg',
-      label: 'JavaScript',
-      desc: 'Interaction'
+  const skills = [
+  {
+      name: "Git",
+      icon: FaGitAlt,
+      description: "Version Control"
+  },
+  {
+    name: <i>Vim</i>,
+    icon: SiVim,
+    description: "Text Editor"
+  },
+  {
+    name: "PyTorch",
+    icon: SiPytorch,
+    description: "Deep Learning"
+  },
+  {
+    name: "Rust",
+    icon: SiRust,
+    description: "Systems Programming"
+  },
+  {
+    name: "Go",
+    icon: SiGo,
+    description: "Backend Development"
+  },
+  {
+      name: "Docker",
+      icon: FaDocker,
+      description: "Containerization"
     },
     {
-      imgSrc: '/images/nodejs.svg',
-      label: 'NodeJS',
-      desc: 'Web Server'
+    name: "Kubernetes",
+    icon: SiKubernetes,
+    description: "Container Orchestration"
+  },
+    {
+      name: "MongoDB",
+      icon: SiMongodb,
+      description: "NoSQL Database"
     },
     {
-      imgSrc: '/images/expressjs.svg',
-      label: 'ExpressJS',
-      desc: 'Node Framework'
+      name: "PostgreSQL",
+      icon: SiPostgresql,
+      description: "SQL Database"
     },
-    {
-      imgSrc: '/images/react.svg',
-      label: 'React',
-      desc: 'Framework'
-    },
-    {
-      imgSrc: '/images/tailwindcss.svg',
-      label: 'TailwindCSS',
-      desc: 'User Interface'
-    },
-    {
-      imgSrc: '/images/pytorch.svg',
-      label: 'PyTorch',
-      desc: 'Machine Learning'
-    },
-    {
-      imgSrc: '/images/rust.svg',
-      label: 'Rust',
-      desc: 'Systems Programming'
-    },
-    {
-      imgSrc: '/images/go.svg',
-      label: 'Go',
-      desc: 'Backend Development'
-    },
+  {
+      name: "TypeScript",
+      icon: SiTypescript,
+      description: "Type-Safe JS"
+  },
+  {
+      name: "Node.js",
+      icon: FaNodeJs,
+      description: "Backend Runtime"
+  },
   ];
 
   return (
     <section id="about" className="py-8 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-6">
-          <h2 className="text-lg md:text-xl font-bold mb-2">Essential Tools I Use</h2>
+          <h2 className="text-lg md:text-xl font-bold mb-2">Some Tools I am learning</h2>
           <p className="text-gray-400 text-sm max-w-xl mx-auto">
-            Discover the powerful tools and technologies I use to create
-            exceptional, high-performing websites & applications.
-          </p>
+          I am interested in almost all fields related to programming, and have recently
+        developed keen interest in the application of Machine Learning in Vision & 
+        NLP 🧠 related tasks, and essentially solving problems combining the two. 
+        I like participating and solving CTFs 🚩. Have also been learning Data Structures
+        and Algorithms.
+        </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {skillItems.map((skill, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {skills.map((skill, index) => (
             <div
-              key={skill.label}
-              className="bg-[#2a2a2a] dark:bg-[#2a2a2a] bg-opacity-80 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-[#3a2a3a] group"
+              key={index}
+              className="p-3 rounded-lg bg-[#121212] border border-[#2a2a2a] hover:bg-[#1a1a1a] transition-colors duration-300 flex items-start"
+              style={{
+                width: '170px',
+                height: '70px'
+              }}
             >
-              <div className="mb-2 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                <img 
-                  src={skill.imgSrc} 
-                  alt={skill.label}
-                  className="w-6 h-6"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = 'none';
-                    const nextSibling = target.nextElementSibling as HTMLElement | null;
-                    if (nextSibling) {
-                      nextSibling.style.display = 'block';
-                    }
-                  }}
-                />
-                <div className="text-sm hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white w-6 h-6 rounded flex items-center justify-center font-bold">{skill.label.charAt(0)}</div>
+              <div className="flex-shrink-0">
+                <skill.icon size={28} className="text-blue-500" />
               </div>
-              <h3 className="text-sm font-semibold mb-1 text-center text-white">{skill.label}</h3>
-              <p className="text-gray-400 text-xs text-center">{skill.desc}</p>
+              
+              <div className="ml-4 flex flex-col">
+                <h3 className="text-sm font-medium text-white">{skill.name}</h3>
+                <p className="text-xs text-gray-400 mt-0.5">{skill.description}</p>
+              </div>
             </div>
           ))}
         </div>

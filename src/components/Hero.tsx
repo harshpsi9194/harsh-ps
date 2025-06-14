@@ -1,5 +1,5 @@
-
-import { Github, Linkedin, Twitter, Badge } from "lucide-react";
+import { FaDiscord } from 'react-icons/fa';
+import { Github, Linkedin, Twitter} from "lucide-react";
 
 const Hero = () => {
   return (
@@ -31,13 +31,16 @@ const Hero = () => {
         
         {/* Social links section */}
         <div className="mt-10 text-left">
-          <p className="text-gray-300 text-sm mb-6 max-w-2xl">
-            Welcome! I'm Henry, a professional web developer with a knack for crafting
-            visually stunning and highly functional websites. Combining creativity and
-            technical expertise, I transform your vision into digital masterpiece.
-          </p>
+          <p className="text-gray-400 text-sm max-w-xl mx-auto">
+          I am interested in almost all fields related to programming, and have recently
+        developed keen interest in the application of Machine Learning in Vision and 
+        NLP 🧠 related tasks, and essentially solving problems combining the two. 
+        I like participating & solving CTFs 🚩. Have also been learning Data Structures
+        and Algorithms.
+        </p>
           
-          <div className="flex gap-6">
+        <div className="mt-8 flex flex-col items-center"> {/* Added items-center */}
+          <div className="flex gap-6" justify-center w-full>
             <a 
               href="https://github.com/harshpsi9194" 
               target="_blank" 
@@ -46,10 +49,6 @@ const Hero = () => {
             >
               <div className="w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
                 <Github size={20} className="text-white" />
-              </div>
-              <div>
-                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">GitHub</div>
-                <div className="text-gray-400 text-xs">View my code</div>
               </div>
             </a>
             
@@ -62,9 +61,16 @@ const Hero = () => {
               <div className="w-12 h-12 bg-blue-600 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-colors duration-300">
                 <Linkedin size={20} className="text-white" />
               </div>
-              <div>
-                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">LinkedIn</div>
-                <div className="text-gray-400 text-xs">Connect with me</div>
+            </a>
+
+            <a 
+              href="https://x.com/HaRsh_PS9194" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-12 h-12 bg-blue-400 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
+                <Twitter size={20} className="text-white" />
               </div>
             </a>
 
@@ -74,30 +80,12 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-3 group"
             >
-              <div className="w-12 h-12 bg-black-700 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
-                <Twitter size={20} className="text-white" />
-              </div>
-              <div>
-                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">X</div>
-                <div className="text-gray-400 text-xs">Follow me on X</div>
-              </div>
-            </a>
-
-            <a 
-              href="https://www.kaggle.com/harsh18189" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 group"
-            >
-              <div className="w-12 h-12 bg-blue-700 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
-                <Badge size={20} className="text-white" />
-              </div>
-              <div>
-                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">Kaggle</div>
-                <div className="text-gray-400 text-xs">View my Notebooks</div>
+              <div className="w-12 h-12 bg-[rgb(88,101,242)] hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
+                <FaDiscord size={20} className="text-white" />
               </div>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </section>
