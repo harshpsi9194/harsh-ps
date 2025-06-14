@@ -1,5 +1,5 @@
 
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Twitter, Badge } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -39,7 +39,7 @@ const Hero = () => {
           
           <div className="flex gap-6">
             <a 
-              href="https://github.com" 
+              href="https://github.com/harshpsi9194" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3 group"
@@ -54,7 +54,7 @@ const Hero = () => {
             </a>
             
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/harsh-pratap-singh-86961a282/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3 group"
@@ -65,6 +65,36 @@ const Hero = () => {
               <div>
                 <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">LinkedIn</div>
                 <div className="text-gray-400 text-xs">Connect with me</div>
+              </div>
+            </a>
+
+            <a 
+              href="https://x.com/HaRsh_PS9194" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-12 h-12 bg-black-700 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
+                <Twitter size={20} className="text-white" />
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">X</div>
+                <div className="text-gray-400 text-xs">Follow me on X</div>
+              </div>
+            </a>
+
+            <a 
+              href="https://www.kaggle.com/harsh18189" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-12 h-12 bg-blue-700 hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors duration-300">
+                <Badge size={20} className="text-white" />
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">Kaggle</div>
+                <div className="text-gray-400 text-xs">View my Notebooks</div>
               </div>
             </a>
           </div>

@@ -22,7 +22,7 @@ const Navbar = () => {
   }, [isDark]);
 
   const navItems = [
-    { name: "About Me", href: "#about" },
+    { name: "About Me", href: "#home" },
     { name: "Skills", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Blogs", href: "#blogs" },
