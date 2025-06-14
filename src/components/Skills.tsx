@@ -44,11 +44,6 @@ const Skills = () => {
     description: "Systems Programming"
   },
   {
-    name: "Go",
-    icon: SiGo,
-    description: "Backend Development"
-  },
-  {
       name: "Docker",
       icon: FaDocker,
       description: "Containerization"
@@ -57,26 +52,6 @@ const Skills = () => {
     name: "Kubernetes",
     icon: SiKubernetes,
     description: "Container Orchestration"
-  },
-    {
-      name: "MongoDB",
-      icon: SiMongodb,
-      description: "NoSQL Database"
-    },
-    {
-      name: "PostgreSQL",
-      icon: SiPostgresql,
-      description: "SQL Database"
-    },
-  {
-      name: "TypeScript",
-      icon: SiTypescript,
-      description: "Type-Safe JS"
-  },
-  {
-      name: "Node.js",
-      icon: FaNodeJs,
-      description: "Backend Runtime"
   },
   ];
 
@@ -94,26 +69,28 @@ const Skills = () => {
         </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="p-3 rounded-lg bg-[#121212] border border-[#2a2a2a] hover:bg-[#1a1a1a] transition-colors duration-300 flex items-start"
-              style={{
-                width: '170px',
-                height: '70px'
-              }}
-            >
-              <div className="flex-shrink-0">
-                <skill.icon size={28} className="text-blue-500" />
+        <div className="flex justify-center"> {/* Added wrapper div */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 justify-items-center">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="p-3 rounded-lg bg-[#121212] border border-[#2a2a2a] hover:bg-[#1a1a1a] transition-colors duration-300 flex items-center" // Changed to items-center
+                style={{
+                  width: '170px',
+                  height: '70px'
+                }}
+              >
+                <div className="flex-shrink-0 ml-2"> {/* Added ml-2 for spacing */}
+                  <skill.icon size={28} className="text-blue-500" />
+                </div>
+                
+                <div className="ml-4 flex flex-col">
+                  <h3 className="text-sm font-medium text-white">{skill.name}</h3>
+                  <p className="text-xs text-gray-400 mt-0.5">{skill.description}</p>
+                </div>
               </div>
-              
-              <div className="ml-4 flex flex-col">
-                <h3 className="text-sm font-medium text-white">{skill.name}</h3>
-                <p className="text-xs text-gray-400 mt-0.5">{skill.description}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

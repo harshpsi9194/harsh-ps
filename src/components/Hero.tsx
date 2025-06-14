@@ -5,38 +5,45 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-10">
-          {/* Left side - Welcome text */}
-          <div className="lg:w-1/2 flex justify-center">
+        <div className="flex flex-col items-center"> {/* Modified this line */}
+          {/* Center aligned content */}
+          <div className="w-full text-center"> {/* Modified width and alignment */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-4 mx-auto">
-                H
+              <div className="w-40 h-40 mx-auto mb-2 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600"> {/* Changed mb-4 to mb-2 */}
+                <img 
+                  src="/main.jpeg" 
+                  alt="Harsh Pratap Singh" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h2 className="text-lg font-semibold text-white mb-2">Welcome! I'm Henry</h2>
-              <p className="text-sm text-gray-300">Professional Web Developer</p>
-            </div>
-          </div>
-          
-          {/* Right side - Text content */}
-          <div className="lg:w-1/2 text-left">
-            <div className="mb-6">
-              <p className="text-gray-400 text-sm mb-2">Building Scalable</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                <span className="text-white">Modern Websites</span><br />
-                <span className="text-white">for the Future</span>
-              </h1>
+              <h4 className="text-[25px] font-semibold text-white mb-1"> {/* Changed mb-2 to mb-1 */}
+                Harsh Pratap Singh
+              </h4>
             </div>
           </div>
         </div>
         
         {/* Social links section */}
-        <div className="mt-10 text-left">
-          <p className="text-gray-400 text-sm max-w-xl mx-auto">
-          I am interested in almost all fields related to programming, and have recently
-        developed keen interest in the application of Machine Learning in Vision and 
-        NLP 🧠 related tasks, and essentially solving problems combining the two. 
-        I like participating & solving CTFs 🚩. Have also been learning Data Structures
-        and Algorithms.
+        <div className="mt-10 text-center">
+          <p className="text-gray-400 text-[17px] max-w-3xl mx-auto">
+        I am an undergraduate student at 
+        <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400"> IIT Kanpur</a>, studying Civil 
+        Engineering.<br></br> I am also Core Team Member at <a href="https://iitk.ac.in/counsel/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400"
+  >Institute Counselling Service, IITK<img src="/ICS Logo.png" alt="ICS Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/>
+</a>
+<br></br>
+
+          <br></br>I am interested in almost all fields related to programming, and have
+        developed keen interest in the applications of Machine Learning in Computer Vision👁️ and 
+        NLP 🧠 related tasks, and essentially solving problems which deal with both of them.
+        I also like solving CTFs 🚩.<br></br> I am also learning about Web3, and Solana<img src="/Solana.png" alt="Solana Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/><br></br>
+
+        <br></br>       
+        My hobbies include playing and watching badminton 🏸 and basketball 🏀<br></br>(big fan of LCW🙇 and Lin Dan🙇), 
+        swimming 🏊, and playing harmonica.<br></br> I also love watching TV shows
+        and movies 🎬, and my favourites among them being Game of thrones(🐺🐉🦁🦌), and.........................................
+        ahhh..... leave it,<br></br> <i>We don't talk about it</i>(🧼). 
+             
         </p>
           
         <div className="mt-8 flex flex-col items-center"> {/* Added items-center */}
