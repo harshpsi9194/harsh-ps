@@ -2,16 +2,6 @@
 const Skills = () => {
   const skillItems = [
     {
-      imgSrc: '/images/figma.svg',
-      label: 'Figma',
-      desc: 'Design tool'
-    },
-    {
-      imgSrc: '/images/css3.svg',
-      label: 'CSS',
-      desc: 'User Interface'
-    },
-    {
       imgSrc: '/images/javascript.svg',
       label: 'JavaScript',
       desc: 'Interaction'
@@ -27,11 +17,6 @@ const Skills = () => {
       desc: 'Node Framework'
     },
     {
-      imgSrc: '/images/mongodb.svg',
-      label: 'MongoDB',
-      desc: 'Database'
-    },
-    {
       imgSrc: '/images/react.svg',
       label: 'React',
       desc: 'Framework'
@@ -40,6 +25,21 @@ const Skills = () => {
       imgSrc: '/images/tailwindcss.svg',
       label: 'TailwindCSS',
       desc: 'User Interface'
+    },
+    {
+      imgSrc: '/images/pytorch.svg',
+      label: 'PyTorch',
+      desc: 'Machine Learning'
+    },
+    {
+      imgSrc: '/images/rust.svg',
+      label: 'Rust',
+      desc: 'Systems Programming'
+    },
+    {
+      imgSrc: '/images/go.svg',
+      label: 'Go',
+      desc: 'Backend Development'
     },
   ];
 
@@ -58,7 +58,7 @@ const Skills = () => {
           {skillItems.map((skill, index) => (
             <div
               key={skill.label}
-              className="bg-[#2a2a2a] p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-[#3a2a3a] group"
+              className="bg-[#2a2a2a] dark:bg-[#2a2a2a] bg-opacity-80 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-[#3a2a3a] group"
             >
               <div className="mb-2 group-hover:scale-110 transition-transform duration-300 flex justify-center">
                 <img 
@@ -74,9 +74,9 @@ const Skills = () => {
                     }
                   }}
                 />
-                <div className="text-sm hidden">{skill.label.charAt(0)}</div>
+                <div className="text-sm hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white w-6 h-6 rounded flex items-center justify-center font-bold">{skill.label.charAt(0)}</div>
               </div>
-              <h3 className="text-sm font-semibold mb-1 text-center">{skill.label}</h3>
+              <h3 className="text-sm font-semibold mb-1 text-center text-white">{skill.label}</h3>
               <p className="text-gray-400 text-xs text-center">{skill.desc}</p>
             </div>
           ))}

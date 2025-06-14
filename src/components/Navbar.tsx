@@ -13,11 +13,7 @@ const Navbar = () => {
     const shouldBeDark = savedTheme ? savedTheme === 'dark' : prefersDark;
     
     setIsDark(shouldBeDark);
-    if (shouldBeDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', shouldBeDark);
   }, []);
 
   const navItems = [
@@ -46,27 +42,22 @@ const Navbar = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
     
-    if (newTheme) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    document.documentElement.classList.toggle('dark', newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
       <div className="max-w-6xl mx-auto flex justify-between items-center gap-6">
         {/* Logo Block - Left */}
-        <div className="bg-[#2a2a2a]/70 backdrop-blur-md border border-gray-700/20 rounded-xl px-4 py-3">
+        <div className="bg-[#2a2a2a]/50 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-700/20 rounded-xl px-4 py-3">
           <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
             H
           </div>
         </div>
 
         {/* Desktop Navigation - Center */}
-        <div className="hidden md:flex bg-[#2a2a2a]/70 backdrop-blur-md border border-gray-700/20 rounded-xl px-6 py-3">
+        <div className="hidden md:flex bg-[#2a2a2a]/50 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-700/20 rounded-xl px-6 py-3">
           <div className="flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -81,7 +72,7 @@ const Navbar = () => {
         </div>
 
         {/* Right Block - Theme Toggle + Contact */}
-        <div className="hidden md:flex bg-[#2a2a2a]/70 backdrop-blur-md border border-gray-700/20 rounded-xl px-4 py-3">
+        <div className="hidden md:flex bg-[#2a2a2a]/50 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-700/20 rounded-xl px-4 py-3">
           <div className="flex items-center space-x-3">
             <button
               onClick={toggleTheme}
@@ -100,7 +91,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu button */}
-        <div className="md:hidden bg-[#2a2a2a]/70 backdrop-blur-md border border-gray-700/20 rounded-xl p-3">
+        <div className="md:hidden bg-[#2a2a2a]/50 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-700/20 rounded-xl p-3">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="inline-flex items-center justify-center text-gray-400 hover:text-white focus:outline-none"
@@ -113,7 +104,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden mt-3 mx-4">
-          <div className="bg-[#2a2a2a]/70 backdrop-blur-md border border-gray-700/20 rounded-xl px-6 py-4 space-y-3">
+          <div className="bg-[#2a2a2a]/50 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-700/20 rounded-xl px-6 py-4 space-y-3">
             {navItems.map((item) => (
               <button
                 key={item.name}
