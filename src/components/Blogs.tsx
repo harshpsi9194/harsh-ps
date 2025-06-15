@@ -5,7 +5,7 @@ const Blogs = () => {
     {
       id: 1,
       title: "My_self",
-      image: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&auto=format", // Professional silhouette
+      image: "/images/main1.jpeg", // Professional silhouette
       link: "/blogs/myself",
       readTime: "5 min read",
       date: "Mar 15, 2024"
@@ -13,7 +13,7 @@ const Blogs = () => {
     {
       id: 2,
       title: "CTFs",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format", // Binary/Matrix style image
+      image: "/images/skull.jpg", // Binary/Matrix style image
       link: "/blogs/ctfs",
       readTime: "8 min read",
       date: "Mar 10, 2024"
@@ -21,27 +21,27 @@ const Blogs = () => {
     {
       id: 3,
       title: "life@iitk",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Iit_kanpur_swimming_pool.jpg/640px-Iit_kanpur_swimming_pool.jpg", // IITK campus image
+      image: "/images/life_at_iitk.jpeg", // IITK campus image
       link: "/blogs/life-at-iitk",
       readTime: "6 min read",
       date: "Mar 05, 2024"
     },
     {
       id: 4,
-      title: "Tech Journey",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format", // Coding/Tech image
+      title: "Open Source Adventures",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BTcmSxeiqyWeDeBMdyOpEvX4r6-nNOrYZQ&s", // GitHub/Code collaboration image
+      link: "/blogs/open-source",
+      readTime: "10 min read",
+      date: "Feb 25, 2024"
+    },
+    {
+      id: 5,
+      title: "Intern prep journey",
+      image: "/images/tech_journey.jpeg", // Coding/Tech image
       link: "/blogs/tech-journey",
       readTime: "7 min read",
       date: "Mar 01, 2024"
     },
-    {
-      id: 5,
-      title: "Open Source Adventures",
-      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=500&auto=format", // GitHub/Code collaboration image
-      link: "/blogs/open-source",
-      readTime: "10 min read",
-      date: "Feb 25, 2024"
-    }
   ];
 
   return (
