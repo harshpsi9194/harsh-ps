@@ -1,94 +1,84 @@
-
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 const Blogs = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Building Responsive Web Applications with React and Tailwind CSS",
-      excerpt: "Learn how to create beautiful, responsive interfaces using the power of React components and Tailwind's utility-first approach.",
-      date: "Dec 10, 2024",
+      title: "My_self",
+      image: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&auto=format", // Professional silhouette
+      link: "/blogs/myself",
       readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
+      date: "Mar 15, 2024"
     },
     {
       id: 2,
-      title: "Modern JavaScript: ES6+ Features Every Developer Should Know",
-      excerpt: "Explore the latest JavaScript features that can improve your code quality and development productivity.",
-      date: "Dec 5, 2024",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
+      title: "CTFs",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format", // Binary/Matrix style image
+      link: "/blogs/ctfs",
+      readTime: "8 min read",
+      date: "Mar 10, 2024"
     },
     {
       id: 3,
-      title: "Optimizing Web Performance: Tips and Best Practices",
-      excerpt: "Discover proven techniques to make your websites faster and more efficient for better user experience.",
-      date: "Nov 28, 2024",
+      title: "life@iitk",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Iit_kanpur_swimming_pool.jpg/640px-Iit_kanpur_swimming_pool.jpg", // IITK campus image
+      link: "/blogs/life-at-iitk",
       readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop"
+      date: "Mar 05, 2024"
+    },
+    {
+      id: 4,
+      title: "Tech Journey",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format", // Coding/Tech image
+      link: "/blogs/tech-journey",
+      readTime: "7 min read",
+      date: "Mar 01, 2024"
+    },
+    {
+      id: 5,
+      title: "Open Source Adventures",
+      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=500&auto=format", // GitHub/Code collaboration image
+      link: "/blogs/open-source",
+      readTime: "10 min read",
+      date: "Feb 25, 2024"
     }
   ];
 
   return (
     <section id="blogs" className="py-10 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-lg md:text-xl font-bold mb-2">Latest Blog Posts</h2>
+      <div className="max-w-6xl mx-auto"> {/* Reduced from max-w-7xl */}
+        <div className="text-center mb-6"> {/* Reduced margin */}
+          <h2 className="text-lg md:text-xl font-bold mb-2">Blogs✍🏻</h2>
           <p className="text-gray-400 text-sm max-w-2xl mx-auto">
-            Insights, tutorials, and thoughts on web development, design trends,
-            and the latest technologies in the industry.
+            I really like writing, and sharing experiences. These blogs are therefore my thoughts
+            and experiences. 
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5"> {/* Reduced gap */}
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-[#2a2a2a] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+              className="bg-[#2a2a2a] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group w-56" /* Reduced from w-64 to w-56 */
             >
-              <div className="relative">
+              <div className="relative h-32 overflow-hidden"> {/* Reduced from h-40 to h-32 */}
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              
-              <div className="p-4">
-                <div className="flex items-center gap-3 text-gray-400 text-xs mb-2">
-                  <div className="flex items-center gap-1">
-                    <Calendar size={12} />
-                    <span>{post.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock size={12} />
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-                
-                <h3 className="text-sm font-semibold mb-2 line-clamp-2 group-hover:text-blue-300 transition-colors">
+              <div className="p-2"> {/* Reduced padding */}
+                <h3 className="text-sm font-semibold text-white mb-1"> {/* Reduced text and margin */}
                   {post.title}
                 </h3>
-                
-                <p className="text-gray-400 mb-3 text-sm leading-relaxed line-clamp-3">
-                  {post.excerpt}
-                </p>
-                
-                <button className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 font-medium text-sm transition-colors">
-                  Read More
-                  <ArrowRight size={12} />
-                </button>
+                <div className="flex items-center justify-between text-xs text-gray-400">
+                  <span>{post.date}</span>
+                  <span>{post.readTime}</span>
+                </div>
               </div>
             </article>
           ))}
-        </div>
-        
-        <div className="text-center">
-          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-sm">
-            View All Posts
-            <ArrowRight size={14} />
-          </button>
         </div>
       </div>
     </section>
