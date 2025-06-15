@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    // Check system preference on initial load
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
+  const { isDark, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     // Apply theme to document
@@ -42,15 +40,11 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const toggleTheme = () => {
-    setIsDark(prev => !prev);
-  };
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 py-3">
-      <div className="flex items-center justify-end px-3 max-w-5xl mx-auto"> {/* Changed justify-between to justify-end */}
+      <div className="flex items-center justify-center px-3 max-w-5xl mx-auto">
         {/* Desktop Navigation - Centered */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:block">
           <div className="bg-white/80 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-200/10 dark:border-gray-700/10 rounded-lg px-4 py-2 shadow-md">
             <div className="flex items-center space-x-6">
               {navItems.map((item) => (
@@ -64,16 +58,6 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Right Block - Theme Toggle */}
-        <div className="hidden md:flex bg-white/80 dark:bg-[#2a2a2a]/50 backdrop-blur-md border border-gray-200/10 dark:border-gray-700/10 rounded-lg px-3 py-2 shadow-md">
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 hover:bg-gray-100/50 dark:hover:bg-white/10 rounded-lg"
-          >
-            {isDark ? <Sun size={14} /> : <Moon size={14} />}
-          </button>
         </div>
 
         {/* Mobile menu button */}

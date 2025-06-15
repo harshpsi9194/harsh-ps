@@ -6,19 +6,16 @@ import {
   FaCss3Alt, 
   FaNodeJs, 
   FaGitAlt,
-  FaDocker 
+  FaDocker, 
+  FaNs8
 } from 'react-icons/fa';
 import { 
-  SiJavascript, 
-  SiTypescript, 
-  SiMongodb, 
-  SiTailwindcss, 
-  SiPostgresql,
   SiPytorch,
   SiKubernetes,
   SiRust,
   SiGo,
-  SiVim
+  SiVim,
+  SiOpencv,
 } from 'react-icons/si';
 
 const Skills = () => {
@@ -39,6 +36,16 @@ const Skills = () => {
     description: "Deep Learning"
   },
   {
+      name: "OpenCV",
+      icon: SiOpencv,
+      description: "Computer Vision"
+    },
+    {
+      name: "Go",
+      icon: SiGo,
+      description: "Backend Development"
+    },
+   {
     name: "Rust",
     icon: SiRust,
     description: "Systems Programming"
@@ -46,7 +53,7 @@ const Skills = () => {
   {
       name: "Docker",
       icon: FaDocker,
-      description: "Containerization"
+      description: "Dockeriztion"
     },
     {
     name: "Kubernetes",
@@ -56,17 +63,10 @@ const Skills = () => {
   ];
 
   return (
-    <section id="about" className="py-8 px-4">
+    <section id="about" className="py-0 px-4">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-6">
-          <h2 className="text-lg md:text-xl font-bold mb-2">Some Tools I am learning</h2>
-          <p className="text-gray-400 text-sm max-w-xl mx-auto">
-          I am interested in almost all fields related to programming, and have recently
-        developed keen interest in the application of Machine Learning in Vision & 
-        NLP 🧠 related tasks, and essentially solving problems combining the two. 
-        I like participating and solving CTFs 🚩. Have also been learning Data Structures
-        and Algorithms.
-        </p>
+          <h2 className="text-lg md:text-xl font-bold mb-2">Tools and Tech I know (and am learning:)</h2>
         </div>
         
         <div className="flex justify-center"> {/* Added wrapper div */}
@@ -91,6 +91,24 @@ const Skills = () => {
               </div>
             ))}
           </div>
+        </div>
+        <br></br>
+         <p className="text-gray-400 text-[16px] max-w-xxl mx-auto justify-center text-center mb-7">
+  I have started to use 
+  <span className="text-red-400"> PyTorch </span> and 
+  <span className="text-red-400"> OpenCV </span> only recently, and have found them to be 
+  super useful and interesting for implementing and experimenting with different ideas. I am also learning
+  <span style={{ color: '#B7410E' }}> Rust</span>, for building and deploying smart contracts, amongst other things, specifically for 
+  <span className="text-purple-400"> Solana</span>. As for 
+  <span className="text-green-400 italic"> Vim</span>, it's like I heard from a few people that it's a great tool 
+  to work with, and so I gave it a try, and I have to say, I really do like it!!. I am also learning <span className="text-blue-400"><i>Go</i></span>, Docker, and Kubernetes.
+  <br />
+  Also, I am exploring n8n as well, as I have found it to be a great tool for automating workflows and integrating different services.
+</p>
+
+        {/* Divider line with spacing */}
+        <div className="max-w-2xl mx-auto px-2 mb-0">
+          <hr className="border-t border-gray-700/50" />
         </div>
       </div>
     </section>
