@@ -12,7 +12,7 @@ const Hero = () => {
               <div className="text-center">
                 <div className="w-40 h-40 mx-auto mb-2 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600"> {/* Changed mb-4 to mb-2 */}
                   <img 
-                    src="/main.jpeg" 
+                    src="/main.jpg" 
                     alt="Harsh Pratap Singh" 
                     className="w-full h-full object-cover"
                   />
