@@ -4,7 +4,6 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Blogs from "@/components/Blogs";
 import Resources from "@/components/Resources";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -16,9 +15,8 @@ const Index = () => {
         <Hero />
         <Skills />
         <Projects />
-        <Blogs />
         <Resources />
-        <Contact />
+        <Blogs />
       </main>
       <Footer />
     </div>

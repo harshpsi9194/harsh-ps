@@ -12,7 +12,7 @@ const Hero = () => {
               <div className="text-center">
                 <div className="w-40 h-40 mx-auto mb-2 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600"> {/* Changed mb-4 to mb-2 */}
                   <img 
-                    src="/main.jpg" 
+                    src="/images/main.jpeg" 
                     alt="Harsh Pratap Singh" 
                     className="w-full h-full object-cover"
                   />
@@ -30,14 +30,14 @@ const Hero = () => {
           I am an undergraduate student at 
           <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400"> IIT Kanpur</a>, studying Civil 
           Engineering.<br></br> I am also Core Team Member at <a href="https://iitk.ac.in/counsel/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400"
-    >Institute Counselling Service, IITK<img src="/ICS Logo.png" alt="ICS Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/>
+    >Institute Counselling Service, IITK<img src="/images/ICS Logo.png" alt="ICS Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/>
   </a>
   <br></br>
 
           <br></br>I am interested in almost all fields related to programming, and have
         developed keen interest in the applications of Machine Learning in Computer Vision👁️ and 
         NLP 🧠 related tasks, and essentially solving problems which deal with both of them.
-        I also like solving CTFs 🚩. I am also learning about Web3, and Solana<img src="/Solana.png" alt="Solana Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/>.<br></br>
+        I also like solving CTFs 🚩. I am also learning about Web3, and Solana<img src="/images/Solana.png" alt="Solana Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/>.<br></br>
 
           <br></br>       
           My hobbies include playing and watching badminton 🏸 and basketball 🏀<br></br>(big fan of LCW🙇, Lin Dan🙇, D Rose🌹, and 🐐MJ), 
@@ -100,7 +100,7 @@ const Hero = () => {
       </section>
      
       {/* Divider line with spacing */}
-      <div className="max-w-4xl mx-auto px-2 mb-7">
+      <div className="max-w-2xl mx-auto px-2 mb-7">
         <hr className="border-t border-gray-700/50" />
       </div>
     </>

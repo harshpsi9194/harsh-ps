@@ -1,80 +1,49 @@
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { FaDiscord } from "react-icons/fa";
+import { SiTypescript, SiReact, SiTailwindcss } from "react-icons/si";
 
-import { Github, Linkedin, Instagram } from "lucide-react";
+const Footer = () => (
+  <footer className="bg-[#1a1a1a] py-8">
+    <div className="relative max-w-screen-xl mx-auto px-4">
+      {/* Centered “Built with…” */}
+      <p className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm flex justify-center items-center gap-2">
+        Built with
+        <a
+          href="https://www.typescriptlang.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-400 transition-colors"
+        >
+          <SiTypescript size={16} />
+        </a>,
+        <a
+          href="https://react.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[#61DAFB] transition-colors"
+        >
+          <SiReact size={16} />
+        </a>,
+        <a
+          href="https://tailwindcss.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[#06B6D4] transition-colors"
+        >
+          <SiTailwindcss size={16} />
+        </a>
+        and 💙
+      </p>
 
-const Footer = () => {
-  const sitemapLinks = [
-    { name: "Home", href: "#home"  },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Blogs", href: "#blogs" },
-    { name: "Resources", href: "#resources" },
-    { name: "Contact Me", href: "#contact" },
-  ];
-
-  const socialLinks = [
-    { name: "GitHub", href: "https://github.com", icon: Github },
-    { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-    { name: "Instagram", href: "https://instagram.com", icon: Instagram },
-  ];
-
-  const handleScroll = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <footer className="bg-[#1a1a1a] border-t border-gray-800 py-10 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* Sitemap */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-white">Sitemap</h3>
-            <div className="grid grid-cols-2 gap-2">
-              {sitemapLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleScroll(link.href)}
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm text-left"
-                >
-                  {link.name}
-                </button>
-              ))}
-            </div>
-          </div>
-          
-          {/* Socials */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-white">Socials</h3>
-            <div className="flex flex-col gap-2">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                  >
-                    <IconComponent size={14} />
-                    {social.name}
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+      {/* Pinned all the way to the right now */}
+      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center gap-4">
         
-        <div className="pt-6 border-t border-gray-800 text-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 Henry. All rights reserved. Built with React & Tailwind CSS.
-          </p>
-        </div>
+        
+        
+        
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;
