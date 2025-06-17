@@ -24,7 +24,7 @@ const Blogs = () => {
     {
       id: 2,
       title: "CTFs",
-      image: "/images/skull.jpg",
+      image: "/images/ctf.jpg",
       link: "/blogs/ctfs",
       readTime: ".....",
       date: "Comming Soon",
@@ -185,7 +185,7 @@ const Blogs = () => {
           <h2 className="text-lg md:text-xl font-bold mb-2">Blogs✍🏻</h2>
           <p className="text-gray-400 text-sm max-w-2xl mx-auto">
             I really like writing, and sharing experiences. These blogs are therefore my thoughts
-            which I feel are worth sharing. Actually, amidst the hustle of the current intern season
+            which I feel are worth sharing. Although, amidst the hustle of the current intern season
             it would take a while before I start adding some content in these.
           </p>
         </div>
