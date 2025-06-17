@@ -8,8 +8,8 @@ const Navbar = () => {
   const navItems = [
     { name: "About Me", href: "#home" },
     { name: "Projects", href: "#projects" },
-    { name: "Resources", href: "#resources" },
-    { name: "Blogs", href: "#blogs" }
+    { name: "Blogs", href: "#blogs" },
+    { name: "Resources", href: "#resources" }
   ];
 
   const handleScroll = (href: string) => {

@@ -37,7 +37,7 @@ const Hero = () => {
           <br></br>I am interested in almost all fields related to programming, and have
         developed keen interest in the applications of Machine Learning in Computer Vision👁️ and 
         NLP 🧠 related tasks, and essentially solving problems which deal with both of them.
-        I also like solving CTFs 🚩. I am also learning about Web3, and Solana<img src="/images/Solana.png" alt="Solana Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/>.<br></br>
+        I like solving CTFs 🚩 and am also learning about Web3, and Solana<img src="/images/Solana.png" alt="Solana Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/> .<br></br>
 
           <br></br>       
           My hobbies include playing and watching badminton 🏸 and basketball 🏀<br></br>(big fan of LCW🙇, Lin Dan🙇, D Rose🌹, and 🐐MJ), 
