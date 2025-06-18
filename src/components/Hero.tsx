@@ -35,15 +35,15 @@ const Hero = () => {
   <br></br>
 
           <br></br>I am interested in almost all fields related to programming, and have
-        developed keen interest in the applications of Machine Learning in Computer Vision👁️ and 
-        NLP 🧠 related tasks, and essentially solving problems which deal with both of them.
+        developed keen interest in the applications of Machine Learning in Computer Vision and 
+        NLP related tasks, and essentially solving problems which deal with both of them.
         I like solving CTFs 🚩 and am also learning about Web3, and Solana<img src="/images/Solana.png" alt="Solana Logo" className="inline-block h-4 w-4 ml-1 -mt-1"/> .<br></br>
 
           <br></br>       
           My hobbies include playing and watching badminton 🏸 and basketball 🏀<br></br>(big fan of LCW🙇, Lin Dan🙇, D Rose🌹, and 🐐MJ), 
           swimming 🏊, and playing harmonica. I also love watching TV shows
           and movies 🎬, and my favourites among them being Game of thrones(🐺🐉🦁🦌), and.........................................
-          ahhh..... leave it,<br></br> <i>We don't talk about it</i><a href="https://www.imdb.com/title/tt0137523/" target="_blank" rel="noopener noreferrer">(🧼)</a>
+          ahhh..... leave it,<br></br><a href="https://www.imdb.com/title/tt0137523/" target="_blank" rel="noopener noreferrer"> <i>We don't talk about it</i>(🧼)</a>
 . 
                
           </p>
@@ -84,7 +84,7 @@ const Hero = () => {
               </a>
 
               <a 
-                href="https://x.com/HaRsh_PS9194" 
+                href="https://discord.com/users/mahabali_kai_fu" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group"

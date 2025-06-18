@@ -74,7 +74,7 @@ const Navbar = () => {
               <FaTwitter size={16} />
             </a>
             <a
-              href="https://discord.com/users/your_discord_id"
+              href="https://discord.com/users/mahabali_kai_fu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors"

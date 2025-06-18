@@ -94,10 +94,10 @@ const Skills = () => {
         </div>
         <br></br>
          <p className="text-gray-400 text-[16px] max-w-xxl mx-auto justify-center text-center mb-7">
-  I have started to use 
+  I have used 
   <span className="text-red-400"> PyTorch </span> and 
-  <span className="text-red-400"> OpenCV </span> only recently, and have found them to be 
-  super useful and interesting for implementing and experimenting with different ideas. I am also learning
+  <span className="text-red-400"> OpenCV </span>, and have found them to be 
+  super useful and interesting for implementing and experimenting with different ideas, related to deep learning. I am also learning
   <span style={{ color: '#B7410E' }}> Rust</span>, amongst other things, for building and deploying smart contracts on
   <span className="text-purple-400"> Solana</span>. As for 
   <span className="text-green-400 italic"> Vim</span>......., it's like I heard from a few people that it's a great tool 
