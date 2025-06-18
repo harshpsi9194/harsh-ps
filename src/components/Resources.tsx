@@ -1,72 +1,267 @@
 
-import { Download, FileText, Palette, BookOpen } from "lucide-react";
+import { ChevronDown, ChevronRight, Github } from "lucide-react";
+import { useState } from "react";
 
 const Resources = () => {
-  const resources = [
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => 
+      prev.includes(sectionId) 
+        ? prev.filter(id => id !== sectionId)
+        : [...prev, sectionId]
+    );
+  };
+
+  const courses = [
     {
-      id: 1,
-      title: "Resume (PDF)",
-      description: "Download my complete professional resume",
-      icon: FileText,
-      downloadUrl: "/resume.pdf",
-      size: "2.3 MB"
+      id: "mth111",
+      title: "MTH111: Single Variable Calculus",
+      description: "Course resources for Single Variable Calculus.",
     },
     {
-      id: 2,
-      title: "Design Assets",
-      description: "UI components and design templates",
-      icon: Palette,
-      downloadUrl: "/design-assets.zip",
-      size: "15.7 MB"
+      id: "mth112",
+      title: "MTH112: Applications of SVC and Multivariable Calculus",
+      description: "Course resources for Multivariable Calculus.",
     },
     {
-      id: 3,
-      title: "Code Cheat Sheets",
-      description: "Quick reference guides for developers",
-      icon: BookOpen,
-      downloadUrl: "/cheat-sheets.pdf",
-      size: "4.1 MB"
+      id: "mth113",
+      title: "MTH113: Linear Algebra",
+      description: "Course resources for Linear Algebra.",
+    },
+    {
+      id: "mth114",
+      title: "MTH114: ODE",
+      description: "Course resources for Ordinary Differential Equations.",
+    },
+    {
+      id: "mso203",
+      title: "MSO203: PDE",
+      description: "Course resources for Partial Differential Equations.",
+    },
+    {
+      id: "hso201",
+      title: "HSO201: Probability and Statistics",
+      description: "Course resources for Probability and Statistics.",
+    },
+    {
+      id: "ee656",
+      title: "EE656: Deep learning and its applications",
+      description: "Course resources for Deep Learning.",
+    },
+    {
+      id: "esc111-112",
+      title: "ESC111/112: Fundamentals of computing I & II",
+      description: "Course resources for Computing Fundamentals.",
+    },
+    {
+      id: "esc201",
+      title: "ESC201: Introduction to electronics",
+      description: "Course resources for Electronics.",
+    },
+    {
+      id: "phy112",
+      title: "PHY112: Classical Dynamics",
+      description: "Course resources for Classical Dynamics.",
     }
   ];
 
+  const mlDlResources = [
+    { id: "nice-papers", title: "Nice papers", description: "A collection of interesting papers in ML/DL." },
+    { id: "csci-378", title: "CSCI-378", description: "Course resources for CSCI-378." },
+    { id: "d2l", title: "Dive into deep learning", description: "Course resources for Dive into deep learning." },
+    { id: "cs7015", title: "CS7015", description: "Course resources for CS7015." }
+  ];
+
+  const miscellaneous = [
+    { id: "docling", title: "Docling doc: IBMs document processing library", description: "Course resources for Docling." },
+    { id: "parallel", title: "Parallel computing", description: "Course resources for Parallel computing." }
+  ];
+
+  const isExpanded = (sectionId: string) => expandedSections.includes(sectionId);
+
   return (
-    <section id="resources" className="py-10 px-4 bg-[#1a1a1a]">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-lg md:text-xl font-bold mb-2">Free Resources</h2>
-          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
-            Download useful resources, templates, and guides that can help
-            accelerate your development workflow and projects.
+    <section id="resources" className="py-16 px-4 bg-[#1a1a1a] text-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-lg md:text-xl font-bold mb-5 text-gray-200 text-center">Resources</h2>
+       <p className="text-gray-400 text-center text-[16px] max-w-3xl mx-auto">
+            These are some resources which I found useful. Hope they help you as well!!
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {resources.map((resource) => {
-            const IconComponent = resource.icon;
-            return (
-              <div
-                key={resource.id}
-                className="bg-[#2a2a2a] p-5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
-              >
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent size={20} className="text-white" />
-                </div>
-                
-                <h3 className="text-base font-semibold mb-2">{resource.title}</h3>
-                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-                  {resource.description}
-                </p>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-500 text-sm">{resource.size}</span>
-                  <button className="inline-flex items-center gap-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 px-3 py-2 rounded text-sm font-medium transition-all duration-300">
-                    <Download size={14} />
-                    Download
+<br></br>
+        {/* Course Resources Section */}
+        <div className="mb-8">
+          <h3 className="text-base font-semibold mb-4 text-gray-300 text-center">Course Resources</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Left Column */}
+            <div className="space-y-2">
+              {courses.slice(0, Math.ceil(courses.length / 2)).map((course) => (
+                <div key={course.id} className="bg-[#2a2a2a] rounded-lg border border-gray-700/50 overflow-hidden">
+                  <button
+                    onClick={() => toggleSection(course.id)}
+                    className="flex items-center justify-between w-full text-left text-gray-400 hover:text-gray-300 hover:bg-[#333333] transition-all duration-200 p-3"
+                  >
+                    <span className="text-sm">{course.title}</span>
+                    <div className="p-1 rounded bg-blue-600/80 hover:bg-blue-500 transition-colors">
+                      {isExpanded(course.id) ? (
+                        <ChevronDown size={14} className="flex-shrink-0 text-white" />
+                      ) : (
+                        <ChevronRight size={14} className="flex-shrink-0 text-white" />
+                      )}
+                    </div>
                   </button>
+                  
+                  {isExpanded(course.id) && (
+                    <div className="p-2 text-xs bg-[#333333] border-t border-gray-700/50">
+                      <div className="flex justify-between items-start">
+                        <p className="text-gray-400">{course.description}</p>
+                        <a
+                          href="https://harshps.netlify.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-2 py-1 text-xs rounded bg-blue-600/80 hover:bg-blue-500 text-white transition-all ml-4"
+                        >
+                          <Github size={12} />
+                          <span>View</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-2">
+              {courses.slice(Math.ceil(courses.length / 2)).map((course) => (
+                <div key={course.id} className="bg-[#2a2a2a] rounded-lg border border-gray-700/50 overflow-hidden">
+                  <button
+                    onClick={() => toggleSection(course.id)}
+                    className="flex items-center justify-between w-full text-left text-gray-400 hover:text-gray-300 hover:bg-[#333333] transition-all duration-200 p-3"
+                  >
+                    <span className="text-sm">{course.title}</span>
+                    <div className="p-1 rounded bg-blue-600/80 hover:bg-blue-500 transition-colors">
+                      {isExpanded(course.id) ? (
+                        <ChevronDown size={14} className="flex-shrink-0 text-white" />
+                      ) : (
+                        <ChevronRight size={14} className="flex-shrink-0 text-white" />
+                      )}
+                    </div>
+                  </button>
+                  
+                  {isExpanded(course.id) && (
+                    <div className="p-2 text-xs bg-[#333333] border-t border-gray-700/50">
+                      <div className="flex justify-between items-start">
+                        <p className="text-gray-400">{course.description}</p>
+                        <a
+                          href="https://harshps.netlify.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-2 py-1 text-xs rounded bg-blue-600/80 hover:bg-blue-500 text-white transition-all ml-4"
+                        >
+                          <Github size={12} />
+                          <span>View</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Divider Line */}
+        <div className="max-w-2xl mx-auto px-4 mb-8">
+          <hr className="border-t border-gray-700/50" />
+        </div>
+
+        {/* Other Resources Section */}
+        <div className="mb-8">
+          <h3 className="text-base font-semibold mb-4 text-gray-300 text-center">Other Resources</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Left Column - ML/DL Resources */}
+            <div className="space-y-2">
+              <h4 className="text-sm font-medium mb-3 text-gray-400 text-center">ML/DL</h4>
+              {mlDlResources.map((item) => (
+                <div key={item.id} className="bg-[#2a2a2a] rounded-lg border border-gray-700/50 overflow-hidden">
+                  <button
+                    onClick={() => toggleSection(item.id)}
+                    className="flex items-center justify-between w-full text-left text-gray-400 hover:text-gray-300 hover:bg-[#333333] transition-all duration-200 p-3"
+                  >
+                    <span className="text-sm">{item.title}</span>
+                    <div className="p-1 rounded bg-blue-600/80 hover:bg-blue-500 transition-colors">
+                      {isExpanded(item.id) ? (
+                        <ChevronDown size={14} className="flex-shrink-0 text-white" />
+                      ) : (
+                        <ChevronRight size={14} className="flex-shrink-0 text-white" />
+                      )}
+                    </div>
+                  </button>
+                  
+                  {isExpanded(item.id) && (
+                    <div className="p-2 text-xs bg-[#333333] border-t border-gray-700/50">
+                      <div className="flex justify-between items-start">
+                        <p className="text-gray-400">{item.description}</p>
+                        <a
+                          href="https://harshps.netlify.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-2 py-1 text-xs rounded bg-blue-600/80 hover:bg-blue-500 text-white transition-all ml-4"
+                        >
+                          <Github size={12} />
+                          <span>View</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right Column - Additional Resources */}
+            <div className="space-y-2">
+              <h4 className="text-sm font-medium mb-3 text-gray-400 text-center">Additional Resources</h4>
+              {miscellaneous.map((item) => (
+                <div key={item.id} className="bg-[#2a2a2a] rounded-lg border border-gray-700/50 overflow-hidden">
+                  <button
+                    onClick={() => toggleSection(item.id)}
+                    className="flex items-center justify-between w-full text-left text-gray-400 hover:text-gray-300 hover:bg-[#333333] transition-all duration-200 p-3"
+                  >
+                    <span className="text-sm">{item.title}</span>
+                    <div className="p-1 rounded bg-blue-600/80 hover:bg-blue-500 transition-colors">
+                      {isExpanded(item.id) ? (
+                        <ChevronDown size={14} className="flex-shrink-0 text-white" />
+                      ) : (
+                        <ChevronRight size={14} className="flex-shrink-0 text-white" />
+                      )}
+                    </div>
+                  </button>
+                  
+                  {isExpanded(item.id) && (
+                    <div className="p-2 text-xs bg-[#333333] border-t border-gray-700/50">
+                      <div className="flex justify-between items-start">
+                        <p className="text-gray-400">{item.description}</p>
+                        <a
+                          href="https://harshps.netlify.app"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-2 py-1 text-xs rounded bg-blue-600/80 hover:bg-blue-500 text-white transition-all ml-4"
+                        >
+                          <Github size={12} />
+                          <span>View</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Divider Line */}
+        <div className="max-w-2xl mx-auto px-4">
+          <hr className="border-t border-gray-700/50" />
         </div>
       </div>
     </section>

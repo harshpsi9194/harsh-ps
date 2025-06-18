@@ -183,7 +183,7 @@ const Blogs = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-6">
           <h2 className="text-lg md:text-xl font-bold mb-2">Blogs✍🏻</h2>
-          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+          <p className="text-gray-400 text-[16px] max-w-3xl mx-auto">
             I really like writing, and sharing experiences. These blogs are therefore my thoughts
             which I feel are worth sharing. Although, amidst the hustle of the current intern season
             it would take a while before I start adding some content in these.
