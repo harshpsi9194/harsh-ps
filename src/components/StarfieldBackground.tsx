@@ -8,7 +8,7 @@ const StarfieldBackground = () => {
       if (!starfieldRef.current) return;
 
       const starfield = starfieldRef.current;
-      const numberOfStars = 200;
+      const numberOfStars = 80;
 
       // Clear existing stars
       starfield.innerHTML = '';
