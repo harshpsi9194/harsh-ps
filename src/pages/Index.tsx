@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#1f1f1f] text-white">
+    <div className="min-h-screen text-white relative">
       <Navbar />
       <main>
         <Hero />
