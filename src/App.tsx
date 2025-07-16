@@ -6,14 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "@/context/ThemeContext";
-import StarfieldBackground from "@/components/StarfieldBackground";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <ThemeProvider>
-    <div className="min-h-screen text-gray-100 transition-colors duration-300 relative">
-      <StarfieldBackground />
+    <div className="min-h-screen bg-[#1f1f1f] text-gray-100 transition-colors duration-300">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
